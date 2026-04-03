@@ -8,15 +8,14 @@
 
   outputs = { self, nixpkgs, ... }@inputs: {
     # Please replace my-nixos with your hostname
-    nixosConfigurations.bulbasaur= nixpkgs.lib.nixosSystem {
+    nixosConfigurations.squirtle= nixpkgs.lib.nixosSystem {
       modules = [
         # Import the previous configuration.nix we used,
         # so the old configuration file still takes effect
         ./configuration.nix
-        ./modules/k3s-master.nix
         ./modules/k3s-server.nix
-        ./modules/k3s-agent.nix
       ];
     };
   };
 }
+
