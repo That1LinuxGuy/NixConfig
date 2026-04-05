@@ -34,7 +34,7 @@
   users.users.mcallen = {
     isNormalUser = true;
     description = "mcallen";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "k3s" ];
     linger = true;
     packages = with pkgs; [];
   };
