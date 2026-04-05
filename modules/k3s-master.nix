@@ -9,6 +9,6 @@
     extraFlags = [
       "--write-kubeconfig-group k3s"
       "--write-kubeconfig-mode 640"
-      ]:
+      ];
   };
 }

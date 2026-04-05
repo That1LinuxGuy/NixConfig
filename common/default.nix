@@ -84,7 +84,7 @@
 
   environment.variables = {
   KUBECONFIG = "/etc/rancher/k3s/k3s.yaml";
-
+  };
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
