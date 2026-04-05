@@ -37,7 +37,7 @@
           ./common/default.nix
           ./common/network.nix
           ./hosts/charmander/charmander.nix
-          ./modules/k3s-agent.nix
+          ./modules/k3s-server.nix
         ];
       };
     };
