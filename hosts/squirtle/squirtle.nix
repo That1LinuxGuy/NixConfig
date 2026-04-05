@@ -20,5 +20,4 @@
   enable = true;
   name = "${config.networking.hostName}-squirtle";
   };
-
 }
