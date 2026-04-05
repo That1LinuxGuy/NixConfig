@@ -2,6 +2,7 @@
 
 {  
   # Bootloader.
+  boot.kernelModules = [ "iscsi_tcp" "libiscsi" ];
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   
@@ -38,6 +39,11 @@
     packages = with pkgs; [];
   };
 
+  systemd.services.iscsid.serviceConfig = {
+    PrivateMounts = "yes";
+    BindPaths = "/run/current-system/sw/bin:/bin";
+    TimeoutStartSec = "30";
+  };
   # Enable git with global config
   programs.git = {
     enable = true;
@@ -62,6 +68,7 @@
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix!
     wget
+    openiscsi
     git
     fastfetch
     (wrapHelm kubernetes-helm {
