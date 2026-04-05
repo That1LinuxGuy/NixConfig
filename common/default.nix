@@ -44,6 +44,7 @@
     BindPaths = "/run/current-system/sw/bin:/bin";
     TimeoutStartSec = "30";
   };
+
   # Enable git with global config
   programs.git = {
     enable = true;
@@ -80,6 +81,9 @@
         ];
       })
   ];
+
+  environment.variables = {
+  KUBECONFIG = "/etc/rancher/k3s/k3s.yaml";
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
