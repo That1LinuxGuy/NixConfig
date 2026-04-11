@@ -10,6 +10,13 @@ I have a repurposed Chromebox, an HP prodesk, and an old dell latitude. They are
 
 For the OS, I wanted something I could set, forget, and easily copy to new machines when I *obviously* expand my hardware selection. Thus, NixOS was a natural choice.
 
+## Tasks
+
+- [ ] Setup CloudNativePG for DB storage
+- [ ] Setup Bitnami Chart for Redis
+- [ ] Setup Ceph via Rook for S3 compatible storage
+- [ ] Install [Mijn Bureau](https://minbzk.github.io/mijn-bureau-infra/) production implementation of La Suite Numerique
+
 ## Layout:
 
 I tried to make it simple. It makes sense to me at least. Each machine is funneled into flake.nix
