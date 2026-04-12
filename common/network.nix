@@ -23,6 +23,9 @@
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [
+    53   # DNS resultion
+    80   # HTTP 
+    443  # HTTPS
     6443 # k3s: required so pods can reach API server
     2379 # k3s, etcd clients: required for High Availability etcd
     2380 # k3s, etcd clients: required for High Availability etcd
@@ -30,6 +33,7 @@
 
   networking.firewall.allowedUDPPorts = [
     8472 # k3s, flannel: required if using multi-node for inter-node networking
+    53   # DNS resolution
   ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
