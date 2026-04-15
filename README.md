@@ -12,10 +12,14 @@ For the OS, I wanted something I could set, forget, and easily copy to new machi
 
 ## Tasks
 
+- [ ] Setup FluxCD to automate deployments, monitoring, and scaling
+- [ ] Re-install Longhorn so Flux can manage configuration
+- [ ] Install and configure Prometheus/Grafana
 - [ ] Setup CloudNativePG for DB storage
 - [ ] Setup Bitnami Chart for Redis
 - [ ] Setup Ceph via Rook for S3 compatible storage
 - [ ] Install [Mijn Bureau](https://minbzk.github.io/mijn-bureau-infra/) production implementation of La Suite Numerique
+- [ ] Cry tears of joy
 
 ## Layout:
 
@@ -31,4 +35,19 @@ in /modules, I have the specific roles for various machines defined
 My biggest concern currently is hardware. In the [etcd guide](https://etcd.io/docs/v3.3/op-guide/hardware/) it specifically states "Fast disks are the most critical factor for etcd deployment performance and stability" \
 Currently, my prodesk only has an HDD that I will not be upgrading anytime soon due to PC part pricing :,(
 
-Second, Nix is weird... After learning Nix code, then adding the flake, then moving EVERYTHING into directories, I ran into a lot of syntax errors and hidden issues. One major "problem" is that the system does not tell you why things don't work. If the K3S service hangs during nixos-rebuild switch - you know the K3S service isn't working, but with no idea why. I said "problem" because this is a specific design of the system - a declarative approach means less work for the user, but also less visibility by default.
+Nix is weird... After learning Nix code, then adding the flake, then moving EVERYTHING into directories, I ran into a lot of syntax errors and hidden issues. the challenge is that the system does not tell you why things don't work since it takes a declarative approach. This means less work for the user, but also less visibility by default.
+
+Another issue is mentally shifting from "Deploying" to "Automating". 
+``` bash
+docker compose up -d
+```
+this deploys an app 
+``` bash
+kubectl apply -f
+# OR
+helm install
+```
+This also deploys an app
+
+Now, FluxCD does that job and my role is to create the "platform" to get apps running
+
