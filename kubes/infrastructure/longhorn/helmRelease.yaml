@@ -15,14 +15,18 @@ spec:
         namespace: longhorn-system
       interval: 10m
       timeout: 15m
+
   values:
-    replicaCount: 2
-    storageMinimalAvailablePercentage: 10
-    # Automatic salvage of volumes after node failure
-    autoSalvage: true
-    ingress:
-      enabled: true
-      host: longhorn.home
-#    metrics:
-#      serviceMonitor:
-#        enabled: true
+    defaultSettings:
+      defaultReplicaCount: 3
+      storageMinimalAvailablePercentage: 10
+      # Automatic salvage of volumes after node failure
+      autoSalvage: true
+      ingress:
+        enabled: true
+        host: longhorn.home
+      persistence:
+        defaultClass: true
+#      metrics:
+#        serviceMonitor:
+#          enabled: true
