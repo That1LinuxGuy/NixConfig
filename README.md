@@ -13,7 +13,7 @@ For the OS, I wanted something I could set, forget, and easily copy to new machi
 ## Tasks
 
 - [x] Setup FluxCD to automate deployments, monitoring, and scaling
-- [ ] Re-install Longhorn so Flux can manage configuration
+- [x] Re-install Longhorn so Flux can manage configuration
 - [ ] Install and configure Prometheus/Grafana
 - [ ] Setup CloudNativePG for DB storage
 - [ ] Setup Bitnami Chart for Redis
@@ -27,8 +27,11 @@ I tried to make it simple. It makes sense to me at least. Each machine is funnel
 
 in /hosts, I have all my machines and hardware \
 in /common, I have common services, networking, and configs \
-in /kubes, I have configs for all the containers I plan to run \
-in /modules, I have the specific roles for various machines defined
+in /modules, I have the specific roles for various machines defined \
+in /kubes, I have my fluxCD monorepo configs for all my container \
+- clusters is my fluxCD config folder
+- infrastructure holds pods required to run services
+- apps is where actual services will run
 
 ## Issues:
 
