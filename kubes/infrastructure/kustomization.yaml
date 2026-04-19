@@ -3,5 +3,5 @@ resources:
   # - cnpg
   # - dns
   - longhorn
-  # - prometheus
+  - prometheus
   # - redis

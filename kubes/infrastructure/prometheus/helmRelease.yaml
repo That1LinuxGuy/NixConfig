@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: kube-prometheus-stack
-      version: "60.x"
+      version: "83.x"
       sourceRef:
         kind: HelmRepository
         name: prometheus-community
@@ -33,7 +33,7 @@ spec:
     prometheus:
       prometheusSpec:
         # Retention period for metrics
-        retention: 30d
+        retention: 5d
         # Storage configuration
         storageSpec:
           volumeClaimTemplate:
@@ -42,7 +42,7 @@ spec:
                 - ReadWriteOnce
               resources:
                 requests:
-                  storage: 50Gi
+                  storage: 20Gi
         # Resource limits
         resources:
           requests:
@@ -50,36 +50,33 @@ spec:
             memory: 2Gi
           limits:
             cpu: 2000m
-            memory: 8Gi
+            memory: 6Gi
         # Select all ServiceMonitors across namespaces
         serviceMonitorSelectorNilUsesHelmValues: false
         podMonitorSelectorNilUsesHelmValues: false
         ruleSelectorNilUsesHelmValues: false
 
     # Alertmanager configuration
-    alertmanager:
-      alertmanagerSpec:
-        storage:
-          volumeClaimTemplate:
-            spec:
-              accessModes:
-                - ReadWriteOnce
-              resources:
-                requests:
-                  storage: 10Gi
-        resources:
-          requests:
-            cpu: 100m
-            memory: 256Mi
+#    alertmanager:
+#      alertmanagerSpec:
+#        storage:
+#          volumeClaimTemplate:
+#            spec:
+#              accessModes:
+#                - ReadWriteOnce
+#              resources:
+#                requests:
+#                  storage: 10Gi
+#        resources:
+#          requests:
+#            cpu: 100m
+#            memory: 256Mi
 
-    # Disable Grafana (deploy separately for more control)
     grafana:
-      enabled: false
+      enabled: true
 
-    # Node exporter configuration
     nodeExporter:
       enabled: true
 
-    # kube-state-metrics configuration
     kubeStateMetrics:
       enabled: true
