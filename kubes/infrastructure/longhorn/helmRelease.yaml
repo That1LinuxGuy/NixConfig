@@ -23,7 +23,10 @@ spec:
       autoSalvage: true
       ingress:
         enabled: true
+        ingressClassName: "traefik"
         host: longhorn.home
+        path: /
+        pathType: Prefix
       persistence:
         defaultClass: true
 #      metrics:
