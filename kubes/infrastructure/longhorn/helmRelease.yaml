@@ -29,6 +29,6 @@ spec:
         pathType: Prefix
       persistence:
         defaultClass: true
-#      metrics:
-#        serviceMonitor:
-#          enabled: true
+      metrics:
+        serviceMonitor:
+          enabled: true
