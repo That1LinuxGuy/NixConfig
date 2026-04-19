@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports =
@@ -11,7 +11,13 @@
 
   services.openiscsi = {
   enable = true;
-  name = "${config.networking.hostName}-bulbasaur";
+  name = "${config.networking.hostName}";
   };
 
+  # This tells Nix to append these strings together rather than overwriting them
+  services.k3s.extraFlags = lib.mkAfter [
+    "--node-label storage=ssd"
+    "--node-label capacity=high"
+    "--node-label ram=40gb"
+  ];
 }

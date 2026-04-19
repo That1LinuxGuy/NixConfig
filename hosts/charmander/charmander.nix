@@ -11,7 +11,13 @@
 
   services.openiscsi = {
   enable = true;
-  name = "${config.networking.hostName}-charmander";
+  name = "${config.networking.hostName}";
   };
 
+  # This tells Nix to append these strings together rather than overwriting them
+  services.k3s.extraFlags = lib.mkAfter [
+    "--node-label storage=hdd"
+    "--node-label capacity=mid"
+    "--node-label ram=12gb"
+  ];
 }

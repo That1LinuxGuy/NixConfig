@@ -18,6 +18,13 @@
 
   services.openiscsi = {
   enable = true;
-  name = "${config.networking.hostName}-squirtle";
+  name = "${config.networking.hostName}";
   };
+
+  # This tells Nix to append these strings together rather than overwriting them
+  services.k3s.extraFlags = lib.mkAfter [
+    "--node-label storage=ssd"
+    "--node-label capacity=low"
+    "--node-label ram=24gb"
+  ];
 }
