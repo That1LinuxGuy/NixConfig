@@ -68,6 +68,18 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Automate storage optimization 
+  nix.optimise.automatic = true;
+
+  # Automate garbage collection
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 10d";
+  };
+
+
+
   # Enable Flakes feature and accompanying CLI tools
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
