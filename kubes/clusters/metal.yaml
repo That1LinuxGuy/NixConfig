@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1h
-  path: ./infrastructure/metal/config
+  path: ./kubes/infrastructure/metal/config
   prune: true
   sourceRef:
     kind: GitRepository
@@ -20,7 +20,7 @@ spec:
   interval: 1h
   dependsOn:
     - name: metallb-config
-  path: ./infrastructure/metal/address
+  path: ./kubes/infrastructure/metal/address
   prune: true
   sourceRef:
     kind: GitRepository
