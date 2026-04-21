@@ -1,7 +1,7 @@
 resources:
   # - ceph
   # - cnpg
-  - dns
+  # - dns
   - longhorn
   - metal
   - prometheus
