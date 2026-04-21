@@ -13,4 +13,5 @@ metadata:
   name: homelab
   namespace: metallb-system
 spec:
-  - homelab-pool
+  ipAddressPools:
+    - homelab-pool
