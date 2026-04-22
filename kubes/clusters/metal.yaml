@@ -18,9 +18,9 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1h
-   dependsOn:
+  dependsOn:
     - name: metal-namespace
- path: ./kubes/infrastructure/metal/config
+  path: ./kubes/infrastructure/metal/config
   prune: true
   sourceRef:
     kind: GitRepository
