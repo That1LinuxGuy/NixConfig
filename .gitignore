@@ -1,2 +1,5 @@
-values.yaml
+# don't commit sercrets
 .envrc
+
+# don't commit backup files
+*.swp
