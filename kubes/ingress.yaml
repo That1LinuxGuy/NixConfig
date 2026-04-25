@@ -1,0 +1,14 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: romm-ingress
+  namespace: romm-app
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`roms.eaglhandlaundry.com`)
+      kind: Rule
+      services:
+        - name: romm
+          port: 80
