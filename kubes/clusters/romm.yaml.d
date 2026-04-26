@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1h
-  path: ./kubes/infrastructure/romm/namespace
+  path: ./kubes/apps/romm/namespace
   prune: true
   sourceRef:
     kind: GitRepository
@@ -20,7 +20,7 @@ spec:
   interval: 1h
   dependsOn:
     - name: romm-namespace
-  path: ./kubes/infrastructure/romm/config
+  path: ./kubes/apps/romm/config
   prune: true
   sourceRef:
     kind: GitRepository
