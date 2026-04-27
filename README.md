@@ -15,7 +15,7 @@ For the OS, I wanted something I could set, forget, and easily copy to new machi
 - [x] Setup FluxCD to automate deployments, monitoring, and scaling
 - [x] Re-install Longhorn so Flux can manage configuration
 - [x] Replace servicelb with metallb
-- [ } Install tailscale kube operator
+- [ ] Install tailscale kube operator
 - [ ] Install and configure Prometheus/Grafana
 - [ ] Setup CloudNativePG for DB storage
 - [ ] Setup Bitnami Chart for Redis
