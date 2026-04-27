@@ -1,0 +1,57 @@
+mariadb:
+  enabled: true
+  persistence:
+    enabled: true
+    size: 1Gi
+    storageClassName: "longhorn"
+
+# Database configuration
+secrets:
+  enabled: true
+  data:
+    DB_USER: "romm"
+    DB_PASSWD: "your_secure_password"
+    DB_NAME: "romm"
+    MYSQL_ROOT_PASSWORD: "your_root_password"
+    DB_PORT: "3306"
+    ROMM_AUTH_SECRET_KEY: "sdn36hjf5oope9arkas5jcl8m7s0ez6x"
+#    IGDB_CLIENT_ID: "your_igdb_client_id"
+#    IGDB_CLIENT_SECRET: "your_igdb_client_secret"
+    STEAMGRIDDB_API_KEY: "e2de7a9fb38356d4fdf8624ac7913783"
+
+# Ingress configuration
+romm:
+  ingress:
+    enabled: true
+    hosts:
+      - host: romm.home
+        paths:
+          - path: /
+            pathType: Prefix
+#    tls:
+#      - secretName: romm-tls
+#        hosts:
+#          - romm.yourdomain.com
+
+  # Storage configuration
+  persistence:
+    config:
+      enabled: true
+      size: 1Gi
+      storageClass: "longhorn"
+      existingClaim: ""
+    library:
+      enabled: true
+      size: 80Gi
+      storageClass: "longhorn"
+      existingClaim: ""
+    resources:
+      enabled: true
+      size: 10Gi
+      storageClass: "longhorn"
+      existingClaim: ""
+    assets:
+      enabled: true
+      size: 5Gi
+      storageClass: "longhorn"
+      existingClaim: ""

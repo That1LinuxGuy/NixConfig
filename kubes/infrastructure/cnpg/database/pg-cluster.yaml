@@ -17,6 +17,16 @@ spec:
       work_mem: "4MB"
       maintenance_work_mem: "64MB"
 
+  superuserSecret:
+    name: postgres-superuser-secret
+
+  bootstrap:
+    initdb:
+      database: app
+      owner: app
+      secret:
+        name: postgres-app-credentials
+
   storage:
     size: 10Gi
     storageClass: longhorn-triple

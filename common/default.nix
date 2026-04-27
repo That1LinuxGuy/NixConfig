@@ -105,6 +105,9 @@
     fluxcd
     fastfetch
     yaml-language-server
+    sops
+    age
+    gnupg
     (wrapHelm kubernetes-helm {
         plugins = with pkgs.kubernetes-helmPlugins; [
           helm-secrets
