@@ -33,6 +33,8 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1h
+  dependsOn:
+    - name: cnpg-namespace
   path: ./kubes/infrastructure/secrets
   sourceRef:
     kind: GitRepository
