@@ -10,12 +10,12 @@ I have a repurposed Chromebox, an HP prodesk, and an old dell latitude. They are
 
 For the OS, I wanted something I could set, forget, and easily copy to new machines when I *obviously* expand my hardware selection. Thus, NixOS was a natural choice.
 
-## Tasks
+## Tasks:
 
 - [x] Setup FluxCD to automate deployments, monitoring, and scaling
 - [x] Re-install Longhorn so Flux can manage configuration
 - [x] Replace servicelb with metallb
-- [ } Install tailscale kube operator
+- [ ] Install tailscale kube operator
 - [ ] Install and configure Prometheus/Grafana
 - [ ] Setup CloudNativePG for DB storage
 - [ ] Setup Bitnami Chart for Redis
@@ -30,7 +30,7 @@ I tried to make it simple. It makes sense to me at least. Each machine is funnel
 in /hosts, I have all my machines and hardware \
 in /common, I have common services, networking, and configs \
 in /modules, I have the specific roles for various machines defined \
-in /kubes, I have my fluxCD monorepo configs for all my container \
+in /kubes, I have my fluxCD monorepo configs for all my container
 - clusters is my fluxCD config folder
 - infrastructure holds pods required to run services
 - apps is where actual services will run
