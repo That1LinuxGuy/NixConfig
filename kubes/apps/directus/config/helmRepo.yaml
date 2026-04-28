@@ -1,8 +1,9 @@
+# SWITCH TO BASEROW
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
-  name: directus
-  namespace: directus-app
+  name: baserow
+  namespace: baserow
 spec:
   interval: 1h
-  url: https://directus-labs.github.io/helm-chart/
+  url: https://baserow.github.io/baserow-chart
