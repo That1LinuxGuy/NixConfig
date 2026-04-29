@@ -14,9 +14,18 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: tailscale-charts
-        namespace: flux-system
+        namespace: tailscale
   values:
     operatorConfig:
       hostname: "homelab-tailscale-operator"
     apiServerProxyConfig:
       mode: "true"
+    oauth:
+      clientId:
+        secret:
+          name: tailscale-auth
+          key: client_id
+      clientSecret:
+        secret:
+          name: tailscale-auth
+          key: client_secret

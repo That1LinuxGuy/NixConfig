@@ -18,8 +18,6 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1h
-  dependsOn:
-    - name: tailscale-namespace
   path: ./kubes/infrastructure/secrets
   prune: true
   sourceRef:
