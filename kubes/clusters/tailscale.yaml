@@ -23,8 +23,7 @@ spec:
   path: ./kubes/infrastructure/secrets
   prune: true
   sourceRef:
-    - name: tailscale-namespace
-  kind: GitRepository
+    kind: GitRepository
     name: flux-system
   decryption:
     provider: sops
@@ -39,7 +38,7 @@ metadata:
 spec:
   interval: 1h
   dependsOn:
-    - name: tailscale-namespace
+    - name: tailscale-secrets
   path: ./kubes/infrastructure/tailscale/config
   prune: true
   sourceRef:
