@@ -9,11 +9,11 @@ spec:
   chart:
     spec:
       chart: tailscale-operator
-      version: '1.90.x'
+      version: '1.96.x'
       interval: 30m
       sourceRef:
         kind: HelmRepository
-        name: tailscale-charts
+        name: tailscale-operator
         namespace: tailscale
   values:
     operatorConfig:
