@@ -14,7 +14,7 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: tailscale-secrets
+  name: operator-oauth
   namespace: flux-system
 spec:
   interval: 1h
@@ -38,7 +38,7 @@ metadata:
 spec:
   interval: 1h
   dependsOn:
-    - name: tailscale-secrets
+    - name: operator-oauth
   path: ./kubes/infrastructure/tailscale/config
   prune: true
   sourceRef:
