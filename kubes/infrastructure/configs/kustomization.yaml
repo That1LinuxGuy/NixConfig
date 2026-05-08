@@ -1,0 +1,9 @@
+resources:
+  - cnpg
+#  - garage
+  - longhorn
+  - metal
+  - prometheus
+#  - redis
+  - tailscale
+#  - certs

@@ -1,7 +1,0 @@
-resources:
-  # - ceph
-  # - cnpg
-  # - dns
-  - longhorn
-  - prometheus
-  # - redis
